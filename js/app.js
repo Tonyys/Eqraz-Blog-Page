@@ -29,7 +29,7 @@ document.querySelector('.showcase-swiper')?
              spaceBetween: 16
          },
          1600: {
-             slidesPerView: 2,
+             slidesPerView: 1.8,
              spaceBetween: 24
          }
      }
