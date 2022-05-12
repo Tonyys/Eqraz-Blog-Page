@@ -5,7 +5,9 @@ menuBtn?.addEventListener('click',function () {
     menuContent.classList.toggle('active')
 })
 // swiper
- const swiperJs = new Swiper ('.showcase-swiper', {
+
+document.querySelector('.showcase-swiper')?
+    new Swiper ('.showcase-swiper', {
     loop: true,
      autoplay: {
         delay: 4000,
@@ -25,6 +27,30 @@ menuBtn?.addEventListener('click',function () {
          1280: {
              slidesPerView: 1.5,
              spaceBetween: 16
+         },
+         1600: {
+             slidesPerView: 2,
+             spaceBetween: 24
          }
      }
- });
+ }) :null;
+// load more
+const loadmore = document.querySelector('.posts__btn');
+let currentItems = 6;
+loadmore?.addEventListener('click', (e) => {
+    e.preventDefault()
+    const elementList = [...document.querySelectorAll('.posts__card')];
+    for (let i = currentItems; i < currentItems + 12; i++) {
+        if (elementList[i]) {
+            elementList[i].style.display = 'flex';
+        }
+    }
+    currentItems += 12;
+
+    // Load more button will be hidden after list fully loaded
+    if (currentItems >= elementList.length) {
+        event.target.style.display = 'none';
+    }
+
+})
+
