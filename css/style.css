@@ -732,6 +732,7 @@ a {
 }
 /*  Blog Page  */
 .blog {
+    height: 470px;
     padding: 170px 0 144px;
     position: relative;
 }
