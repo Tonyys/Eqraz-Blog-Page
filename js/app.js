@@ -40,12 +40,12 @@ let currentItems = 6;
 loadmore?.addEventListener('click', (e) => {
     e.preventDefault()
     const elementList = [...document.querySelectorAll('.posts__card')];
-    for (let i = currentItems; i < currentItems + 12; i++) {
+    for (let i = currentItems; i < currentItems + 6; i++) {
         if (elementList[i]) {
             elementList[i].style.display = 'flex';
         }
     }
-    currentItems += 12;
+    currentItems += 6;
 
     // Load more button will be hidden after list fully loaded
     if (currentItems >= elementList.length) {
